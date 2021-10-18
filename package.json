@@ -1,0 +1,43 @@
+{
+  "name": "nestjs-swagger-api-http-response-decorators",
+  "version": "1.0.0",
+  "description": "Small npm package that exports 'Api' decorators for all HTTP status codes available on @nestjs/common package, to use with @nestjs/swagger.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
+  "scripts": {
+    "prebuild": "./scripts/generate-index-ts-file.js",
+    "build": "tsc",
+    "prepare": "npm run build",
+    "version": "git add -A",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/micalevisk/nestjs-swagger-api-http-response-decorators.git"
+  },
+  "bugs": {
+    "url": "https://github.com/micalevisk/nestjs-swagger-api-http-response-decorators/issues"
+  },
+  "homepage": "https://github.com/micalevisk/nestjs-swagger-api-http-response-decorators#readme",
+  "keywords": [
+    "nestjs",
+    "swagger"
+  ],
+  "author": "Micael Levi (https://micalevisk.github.io)",
+  "license": "ISC",
+  "devDependencies": {
+    "@nestjs/common": "^8.1.1",
+    "@nestjs/swagger": "^5.1.1",
+    "@types/node": "^16.11.1",
+    "to-pascal-case": "^1.0.0",
+    "typescript": "^4.4.4"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^7 || ^8",
+    "@nestjs/swagger": "^4 || ^5"
+  }
+}
