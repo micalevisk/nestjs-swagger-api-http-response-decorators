@@ -1,0 +1,30 @@
+## TODO:
+## verifica se está desatualizado (ie., tem decoradors no repo oficial que estão aqui)
+## se estiver, fazer build de novo e (tentar) publicá-lo
+## Precisará verificar a versão do swagger e a existência dos arquivos
+name: Drop decorators taken
+
+on:
+  ## Allow triggering this workflow manually via GitHub CLI/web
+  workflow_dispatch:
+
+  schedule:
+    - cron: '0 0 * * 0' # https://crontab.guru/once-a-week
+
+jobs:
+  run:
+    name: Check if is stale
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    env:
+      NODE_ENV: 'production'
+    steps:
+      ##########################################################################
+      ######################### Prepare the environment ########################
+      ##########################################################################
+      - name: Checkout repo
+        uses: actions/checkout@v2.3.4
+      - uses: bahmutov/npm-install@v1
+      ##########################################################################
+      - name: Do nice things
+        run: echo TODO
