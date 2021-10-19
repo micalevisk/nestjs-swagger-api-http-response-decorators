@@ -5,6 +5,14 @@
 
 ![demo](https://user-images.githubusercontent.com/13461315/137818431-c8f507a3-d61a-4bd2-bcfb-2254c1eb82f8.png)
 
+## Installation
+
+```bash
+npm i @nestjs/swagger nestjs-swagger-api-http-response-decorators
+# or
+yarn add @nestjs/swagger nestjs-swagger-api-http-response-decorators
+```
+
 ## What
 
 Taking the following TypeScript enumerate as an example:
@@ -19,7 +27,7 @@ enum HttpStatus {
 }
 ```
 
-this small package exports `@ApiX` decorator factories (read more about them [here](https://docs.nestjs.com/openapi/decorators)) for each enum field listed above, **including** the ones already available on [`@nestjs/swagger`](https://github.com/nestjs/swagger) package.
+this small package exports `@ApiXResponse(opts)` decorator factories (read more about them [here](https://docs.nestjs.com/openapi/decorators)) for each enum field listed above, **including** the ones already available on [`@nestjs/swagger`](https://github.com/nestjs/swagger) package.
 
 The `X` part will be the name of that enum field in camel case.  
 eg: `HTTP_VERSION_NOT_SUPPORTED` (in snake case) becomes `HttpVersionNotSupported` (in camel case)

@@ -21,7 +21,7 @@ export * from '@nestjs/swagger';
 
 /** */
 const template = `
-export const Api<% statusNamePascal %> = (options?: ApiResponseOptionsWihtoutStatus) =>
+export const Api<% statusNamePascal %>Response = (options?: ApiResponseOptionsWihtoutStatus) =>
   ApiResponse({
     ...options,
     status: HttpStatus.<% statusName %>,
