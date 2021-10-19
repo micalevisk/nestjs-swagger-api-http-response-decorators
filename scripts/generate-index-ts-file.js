@@ -16,7 +16,7 @@ import { HttpStatus } from '@nestjs/common';
 
 type ApiResponseOptionsWihtoutStatus = Omit<ApiResponseOptions, 'status'>;
 
-export * from '@nestjs/swagger';
+export * from '@nestjs/swagger/dist/decorators/api-response.decorator';
 `.trimLeft();
 
 /** */
