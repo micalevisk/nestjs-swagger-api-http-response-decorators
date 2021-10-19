@@ -2,6 +2,8 @@
 
 set -e
 
+cd "$(dirname "$0")"
+
 wget -O - https://raw.githubusercontent.com/nestjs/swagger/master/lib/decorators/api-response.decorator.ts |
   grep --color=never -Po "(?<=HttpStatus\.)\w+" |
   sort -u > available
