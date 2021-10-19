@@ -9,7 +9,7 @@
     "index.d.ts"
   ],
   "scripts": {
-    "prebuild": "./scripts/generate-index-ts-file.js",
+    "prebuild": "./scripts/fetch-missing-decorators.sh && ./scripts/generate-index-ts-file.js",
     "build": "tsc",
     "prepare": "npm run build",
     "version": "git add -A",
