@@ -1,6 +1,6 @@
 {
   "name": "nestjs-swagger-api-http-response-decorators",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "Small npm package that exports 'Api' decorators for all HTTP status codes available on @nestjs/common package, to use with @nestjs/swagger.",
   "main": "index.js",
   "types": "index.d.ts",
