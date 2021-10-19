@@ -3,7 +3,7 @@
 [![npm version](https://badge.fury.io/js/nestjs-swagger-api-http-response-decorators.svg)](https://badge.fury.io/js/nestjs-swagger-api-http-response-decorators)
 [![npm downloads](https://img.shields.io/npm/dt/nestjs-swagger-api-http-response-decorators.svg)](https://www.npmjs.com/package/nestjs-swagger-api-http-response-decorators)
 
-![demo](https://user-images.githubusercontent.com/13461315/137818431-c8f507a3-d61a-4bd2-bcfb-2254c1eb82f8.png)
+![demo](https://user-images.githubusercontent.com/13461315/137845531-c4891777-60f2-481b-9580-594e2da079eb.png)
 
 ## Installation
 
