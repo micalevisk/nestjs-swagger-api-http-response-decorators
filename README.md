@@ -50,7 +50,7 @@ Using the following tools:
 - `sha1sum`
 - Node.js 
 
-This is how I'm generate the `index.ts` (on root dir.) file:
+This is how to generate the `index.ts` (on root dir.) file:
 
 ```
 $ npm ci
@@ -63,4 +63,22 @@ $ cd ../meta
 $ sha1sum missing > missing.sha1
 $ # ... later on, repeat the whole process and then
 $ sha1sum -c missing.sha1
+```
+
+## Development usage
+
+The following doesn't cover properly how to develop the main script `scripts/generate-index-ts-file.js`.
+
+```bash
+# To install all (dev)dependencies
+npm ci
+
+# To grab the latest version of the list of all missing enum fields from `@nestjs/swagger` and `@nestjs/common`
+npm run download
+
+# To generate the index.ts file
+npm run create
+
+# To compile the index.ts file everytime some change is made on it
+npm run dev
 ```

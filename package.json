@@ -11,6 +11,10 @@
   "scripts": {
     "prebuild": "./scripts/fetch-missing-decorators.sh && ./scripts/generate-index-ts-file.js",
     "build": "tsc",
+    "download": "./scripts/fetch-missing-decorators.sh",
+    "create": "node scripts/generate-index-ts-file.js",
+    "dev": "NODE_ENV=development tsc --watch",
+    "clean": "rm *.ts index.js",
     "prepare": "npm run build",
     "version": "git add -A",
     "postversion": "git push && git push --tags"
