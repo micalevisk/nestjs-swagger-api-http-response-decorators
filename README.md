@@ -29,8 +29,8 @@ enum HttpStatus {
 
 this small package exports `@ApiXResponse(opts)` decorator factories (read more about them [here](https://docs.nestjs.com/openapi/decorators)) for each enum field listed above, **including** the ones already available on [`@nestjs/swagger`](https://github.com/nestjs/swagger) package.
 
-The `X` part will be the name of that enum field in camel case.  
-eg: `HTTP_VERSION_NOT_SUPPORTED` (in snake case) becomes `HttpVersionNotSupported` (in camel case)
+The `X` part will be the name of that enum field in pascal case.  
+eg: `HTTP_VERSION_NOT_SUPPORTED` becomes `HttpVersionNotSupported`
 
 In order to make this package as lean as possible, only decorators there are not available in `@nestjs/swagger` are implemented.
 The other ones are exported as-is via `export * from '@nestjs/swagger'`.
