@@ -33,6 +33,9 @@
   ],
   "author": "Micael Levi (https://micalevisk.github.io)",
   "license": "ISC",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
   "devDependencies": {
     "@nestjs/common": "^8.2.3",
     "@nestjs/swagger": "^5.1.5",
