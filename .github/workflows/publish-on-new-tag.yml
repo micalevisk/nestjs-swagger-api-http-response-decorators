@@ -1,4 +1,4 @@
-name: Publish on new tag
+name: Publish on new version tag
 
 on:
   ## Allow triggering this workflow manually via GitHub CLI/web
@@ -6,7 +6,7 @@ on:
 
   push:
     tags:
-    - '*'
+      - 'v*'
 
 jobs:
   publish:
@@ -14,14 +14,16 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+      ## Set up .npmrc file to publish to NPM
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org'
       - name: Install dependencies
         run: npm install
       - name: Build
         run: npm run build
       - name: Publish
         env:
-          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
-        run: |
-          npm config set registry 'https://registry.npmjs.org/'
-          npm config set '//registry.npmjs.org/:_authToken' '$NPM_TOKEN'
-          npm publish --access public
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish
