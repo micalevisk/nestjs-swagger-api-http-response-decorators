@@ -1,13 +1,7 @@
-# This file must be generated with `$ npm run build`
-index.ts
-# This file will be generated from `index.ts`
-index.js
-# This file will be generated from `index.ts`
-index.d.ts
+lib
 
-meta/missing
-meta/all
-meta/available
+meta/*
+!meta/missing.sha1
 
 # Created by https://www.toptal.com/developers/gitignore/api/vim,node,linux,windows,macos,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=vim,node,linux,windows,macos,visualstudiocode

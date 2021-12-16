@@ -2,20 +2,26 @@
   "name": "nestjs-swagger-api-http-response-decorators",
   "version": "3.0.2",
   "description": "Small npm package that exports 'Api' decorators for all HTTP status codes available on @nestjs/common package, to use with @nestjs/swagger.",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "type": "commonjs",
   "files": [
-    "index.js",
-    "index.d.ts"
+    "lib/**"
   ],
+  "types": "./lib/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/index.mjs",
+      "required": "./lib/index.js",
+      "default": "./lib/index.js"
+    }
+  },
   "scripts": {
-    "prebuild": "./scripts/fetch-missing-decorators.sh && ./scripts/generate-index-ts-file.js",
-    "build": "tsc",
+    "create": "node ./scripts/generate-index-ts-file.js",
     "download": "./scripts/fetch-missing-decorators.sh",
-    "create": "node scripts/generate-index-ts-file.js",
-    "dev": "NODE_ENV=development tsc --watch",
-    "clean": "rm *.ts index.js",
-    "prepare": "npm run build",
+    "prebuild": "npm run download && npm run  create",
+    "build": "tsup src/index.ts --sourcemap external --platform node --format cjs,esm --dts src/index.ts --clean --target ES2017 --out-dir lib",
+    "clean": "rm -rf lib",
+    "dev": "NODE_ENV=development npm run --ignore-scripts build -- --watch src",
+    "prepublishOnly": "npm run build",
     "version": "git add -A",
     "postversion": "git push && git push --tags"
   },
@@ -41,6 +47,7 @@
     "@nestjs/swagger": "^5.1.5",
     "@types/node": "^16.11.10",
     "to-pascal-case": "^1.0.0",
+    "tsup": "^5.10.0",
     "typescript": "^4.5.2"
   },
   "peerDependencies": {

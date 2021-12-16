@@ -7,10 +7,10 @@ const toPascalCase = require('to-pascal-case');
 /** The list of all missing enum field names. */
 const PATH_INPUT_FILE = join(__dirname, '..', 'meta', 'missing');
 /** */
-const PATH_OUTPUT_FILE = join(__dirname, '..', 'index.ts');
+const PATH_OUTPUT_FILE = join(__dirname, '..', 'src', 'index.ts');
 
 /** */
-const fileHeaderStaticContent = `
+const fileHeaderStaticContent = `// ==== THIS FILE WAS GENERATED PROGRAMATICALLY!
 import { ApiResponse, ApiResponseOptions } from '@nestjs/swagger';
 import { HttpStatus } from '@nestjs/common';
 

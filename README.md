@@ -33,13 +33,15 @@ The `X` part will be the name of that enum field in pascal case.
 eg: `HTTP_VERSION_NOT_SUPPORTED` becomes `HttpVersionNotSupported`
 
 In order to make this package as lean as possible, only decorators there are not available in `@nestjs/swagger` are implemented.
-The other ones are exported as-is via `export * from '@nestjs/swagger'`.
+The other ones are exported as-is via `export * from '@nestjs/swagger'` _(TypeScript code)_.
+
+**NOTE:** This package exports both ECMAScript (ESM) and CommonJS (CJS) versions!
 
 ## Why
 
 `@nestjs/swagger` does not have `@ApiX` decorators for all available HTTP status code out there (and this is why they export the `@ApiResponse`), and **["There are no plans to add more decorators."](https://github.com/nestjs/swagger/issues/1501#issuecomment-945644971)**.
 
-## How `index.ts` is being created?
+## How `src/index.ts` is being created?
 
 I'm lazy, thus I made two simple scripts to generate the TypeScript code from missing `@ApiX` decorators, relying on `HttpStatus` enum exported from `@nestjs/common` package.
 
@@ -50,19 +52,18 @@ Using the following tools:
 - `sha1sum`
 - Node.js 
 
-This is how to generate the `index.ts` (on root dir.) file:
+This is how I generate an up-to-date [`src/index.ts`](./src/index.ts) file:
 
-```
-$ npm ci
+```bash
+npm ci
 
-$ cd scripts
-$ ./fetch-missing-decorators.sh
-$ ./generate-index-ts-file.js
+./scripts/fetch-missing-decorators.sh
+./scripts/generate-index-ts-file.js
 
-$ cd ../meta
-$ sha1sum missing > missing.sha1
-$ # ... later on, repeat the whole process and then
-$ sha1sum -c missing.sha1
+sha1sum meta/missing > meta/missing.sha1
+# ... later on, repeat the whole process and then run the followin to check
+# if there was changes on the original list of enums
+sha1sum -c meta/missing.sha1
 ```
 
 ## Development usage
