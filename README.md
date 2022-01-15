@@ -2,6 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/nestjs-swagger-api-http-response-decorators.svg)](https://www.npmjs.com/package/nestjs-swagger-api-http-response-decorators)
 [![npm downloads](https://img.shields.io/npm/dt/nestjs-swagger-api-http-response-decorators.svg)](https://www.npmjs.com/package/nestjs-swagger-api-http-response-decorators)
+[![supported nestjs versions](https://img.shields.io/badge/supported_versions-7|8-873131.svg?logo=nestjs)](https://nestjs.com)
 
 ![demo](https://user-images.githubusercontent.com/13461315/137850427-8c36ba4c-1067-4153-92dd-113c042ea21a.png)
 
