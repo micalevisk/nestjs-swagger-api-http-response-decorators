@@ -37,11 +37,11 @@
     "registry": "https://registry.npmjs.org"
   },
   "devDependencies": {
-    "@nestjs/common": "^10.2.7",
-    "@nestjs/swagger": "^7.1.13",
-    "@types/node": "^20.8.3",
+    "@nestjs/common": "^10.3.7",
+    "@nestjs/swagger": "^7.3.1",
+    "@types/node": "^20.12.5",
     "to-pascal-case": "^1.0.0",
-    "typescript": "^5.2.2"
+    "typescript": "^5.4.4"
   },
   "peerDependencies": {
     "@nestjs/common": "^7 || ^8 || ^9 || ^10",
